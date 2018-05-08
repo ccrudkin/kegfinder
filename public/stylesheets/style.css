@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 1000px;
+  padding: 50px;
+  font: 14px Roboto, sans-serif;
+  margin: auto;
+}
+
+a {
+  color: #5dade2;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  color: #e5e8e8;
+  background-color: #45b39d;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.formbutton {
+  color: #e5e8e8;
+  font-family: Roboto, sans-serif;
+  border: 2px solid #45b39d;
+  cursor: pointer;
+  background-color: #45b39d;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 5px auto;
+}
+
+.formbutton:hover {
+  color: #45b39d;
+  background-color: #e5e8e8;
+  border: 2px solid #45b39d;
+  padding: 5px 10px;
+}
+
+.multiform {
+  font-family: Roboto, sans-serif;
+  color: #424949;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.multiform .multiforminputs {
+  font-family: Roboto, sans-serif;
+  color: #424949;
+  padding: 5px;
+  margin: auto;
+}
