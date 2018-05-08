@@ -1,0 +1,30 @@
+{
+  "name": "kegfinder",
+  "version": "1.0.0",
+  "description": "Web app for brewery keg management and inventory",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccrudkin/kegfinder.git"
+  },
+  "keywords": [
+    "keg",
+    "beer",
+    "brewing",
+    "brewery",
+    "inventory",
+    "logistics"
+  ],
+  "author": "Collin Rudkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccrudkin/kegfinder/issues"
+  },
+  "homepage": "https://github.com/ccrudkin/kegfinder#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
