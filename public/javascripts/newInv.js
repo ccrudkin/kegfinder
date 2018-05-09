@@ -2,17 +2,23 @@ function newInv() {
     let num = document.getElementById('newInvSize').value;
     let type = document.getElementById('kegType').value;
     let nameScheme = document.getElementById('nameScheme').value;
+    let user = document.getElementById('userID').value; // later will come from auth
+    let add = document.getElementById('addToInvCheck');
 
-    console.log(num + ' ' + type + ' ' + nameScheme);
+    console.log(user + ' ' + num + ' ' + type + ' ' + nameScheme);
 
     $.ajax({
-        url: '/newinventory=create',
+        url: '/newinventory=create/' + user + '/' + num + '/' + type + '/' + nameScheme + '/' + add.checked,
         type: 'GET',
         success(response) {
-            console.log(response);
+            if (response === 'Success.') {
+                console.log(response);
+            } else {
+                document.getElementById('errorDialog').innerHTML = response;
+            }
         },
         error(jqXHR, status, errorThrown) {
-            console.log(status);
+            console.log('Error: ' + status);
         }
     });
 }

@@ -1,9 +1,12 @@
 <% include header %>
-    <h1><%= title %></h1>
     <a href='/'>Home</a>
     <h2>Initialize new kegs</h2>
     <div class='multiform'>
         <form id='newInvForm'>
+            <div class='multiforminputs'>
+                    <label for='userID'>User ID: </label>
+                    <input id='userID' placeholder='User ID #'>
+            </div>
             <div class='multiforminputs'>
                 <label for='newInvSize'>Number: </label>
                 <input id='newInvSize' placeholder='Number of new kegs'>
@@ -20,9 +23,14 @@
                 <label for='nameScheme'>Naming scheme: </label>
                 <select id='nameScheme'>
                     <option value='startOne'>Count from 1</option>
-                    <option value='alphaNum'>4-place alphanumeric</option>
+                    <option value='alphaNum' disabled>4-place alphanumeric</option>
                 </select>
             </div>
+            <div class='multiforminputs'>
+                    <label for='addToInvCheck'>Add to existing inventory: </label>
+                    <input type='checkbox' id='addToInvCheck'>
+                    <p id='errorDialog' class='errorDialog'></p>
+                </div>
             <div>
                 <button type='button' class='formbutton' id='createNewInv'>Create</button>
             </div>

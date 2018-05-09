@@ -58,3 +58,8 @@ h2 {
   padding: 5px;
   margin: auto;
 }
+
+.errorDialog {
+  font-family: Roboto, sans-serif;
+  color: #c0392b;
+}
