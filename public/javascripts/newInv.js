@@ -11,11 +11,7 @@ function newInv() {
         url: '/newinventory=create/' + user + '/' + num + '/' + type + '/' + nameScheme + '/' + add.checked,
         type: 'GET',
         success(response) {
-            if (response === 'Success.') {
-                console.log(response);
-            } else {
-                document.getElementById('errorDialog').innerHTML = response;
-            }
+            document.getElementById('errorDialog').innerHTML = response;
         },
         error(jqXHR, status, errorThrown) {
             console.log('Error: ' + status);

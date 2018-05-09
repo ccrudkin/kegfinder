@@ -43,12 +43,13 @@ router.get('/:user/:num/:type/:naming/:add', (req, res) => {
 
     if (add === 'false') {
         db.serialize(() => {
-            db.run(`CREATE TABLE inventory${user} (id NUMERIC PRIMARY KEY, initialized NUMERIC, condition TEXT, 
-                type TEXT, batchid TEXT, style TEXT, fillnotes TEXT, location TEXT, movedate NUMERIC, 
-                othernotes TEXT)`, (err) => {
+            db.run(`CREATE TABLE inventory${user} (id NUMERIC PRIMARY KEY, initialized NUMERIC, 
+                condition TEXT, type TEXT, batchid TEXT, style TEXT, fillnotes TEXT, location TEXT, 
+                movedate NUMERIC, othernotes TEXT)`, (err) => {
                     if (err) {
                         console.log('Error: ' + err);
-                        res.send('Please check box if you are adding to an existing inventory.<br><br>' + err);
+                        res.send('Please check box if you are adding to an existing inventory.<br><br>' 
+                            + err);
                     } else {
                         console.log('New table successfully created.');
                         res.send('Success.');
