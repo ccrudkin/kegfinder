@@ -4,7 +4,7 @@
 
 body {
   width: 1000px;
-  padding: 50px;
+  padding: 10px;
   font: 14px Roboto, sans-serif;
   margin: auto;
 }
@@ -19,12 +19,39 @@ h1 {
 
 h2 {
   font-family: Roboto, sans-serif;
-  font-size: 24px;
-  color: #e5e8e8;
+  font-size: 20px;
+  width: 700px;
+  color: #45b39d;
+  background-color: #fff;
+  border: 2px solid #45b39d;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-left: 0px;
+}
+
+.navbar {
+  width: 1000px;
+  height: 45px;
+  display: inline-block;
   background-color: #45b39d;
   border-radius: 3px;
-  padding: 10px;
-  margin: 10px auto;
+  margin: auto;
+}
+
+.navbar a {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  color: #e5e8e8;
+  height: 45px;
+  padding: 10px 20px;
+}
+
+.navbar a:hover {
+  color: #45b39d;
+  background-color: #fff;
 }
 
 .formbutton {
@@ -72,6 +99,16 @@ h2 {
   margin: auto;
 }
 
+input, select, textarea {
+  border: solid 1px #707b7c;
+  border-radius: 2px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border: solid 1px #5dade2;
+  box-shadow: 0 0 3px #5dade2;
+}
+
 .errorDialog {
   font-family: Roboto, sans-serif;
   color: #c0392b;
@@ -105,8 +142,8 @@ h2 {
 }
 
 #updateKegs {
-  width: 500px;
-  height: 200px;
+  width: 400px;
+  height: 150px;
 }
 
 #othernotes {

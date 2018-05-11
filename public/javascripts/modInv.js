@@ -52,6 +52,7 @@ function getForm() {
 
 function resetFields() {
     document.getElementById('updateInvForm').reset();
+    document.getElementById('message').innerHTML = '';
 }
 
 document.getElementById('updateButton').addEventListener('click', getForm);
