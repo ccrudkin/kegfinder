@@ -30,12 +30,25 @@ h2 {
 .formbutton {
   color: #e5e8e8;
   font-family: Roboto, sans-serif;
+  font-weight: 700;
   border: 2px solid #45b39d;
   cursor: pointer;
   background-color: #45b39d;
   padding: 5px 10px;
   border-radius: 3px;
-  margin: 5px auto;
+  margin: 5px 5px auto;
+}
+
+#resetButton {
+  color: #eb984e;
+  background-color: #e5e8e8;
+  border: 2px solid #eb984e;
+}
+
+#resetButton:hover {
+  color: #e5e8e8;
+  background-color: #eb984e;
+  border: 2px solid #eb984e;
 }
 
 .formbutton:hover {
@@ -62,4 +75,45 @@ h2 {
 .errorDialog {
   font-family: Roboto, sans-serif;
   color: #c0392b;
+}
+
+.catalog table {
+  border-collapse: collapse;
+  border-left: 3px solid #45b39d;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+.catalog thead {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #424949;
+  background-color: #e5e8e8;
+}
+
+.catalog tbody {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+}
+
+.catalog th, td {
+  padding: 5px 10px;
+}
+
+.catalog tbody tr:nth-child(even) {
+  background-color: #e5e8e8;
+}
+
+#updateKegs {
+  width: 500px;
+  height: 200px;
+}
+
+#othernotes {
+  width: 300px;
+  height: 60px;
+}
+
+#searchTermWarning {
+  display: inline;
 }

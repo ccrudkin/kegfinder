@@ -1,0 +1,40 @@
+<% include header %>
+    <a href='/'>Home</a>
+    <a href='/newInventory'>Create new keg inventory</a>
+    <a href='/modInventory'>Update keg inventory</a>
+    <h2>View inventory</h2>
+    <div class='multiform'>
+        <form id='viewInvForm'>
+            <div class='multiforminputs'>
+                <label for='userID'>User ID: </label>
+                <input id='userID' placeholder='User ID #'>
+            </div>
+            <div class='multiforminputs'>
+                <label for='searchBy'>Search by: </label>
+                <select id='searchBy' name='searchBy'>
+                    <option value='id'>Keg ID</option>
+                    <option value='style'>Style/contents</option>
+                    <option value='batchid'>Batch ID</option>
+                    <option value='location'>Location</option>
+                    <option value='condition'>Status</option>
+                    <option value='all'>View all</option>
+                </select>
+            </div>
+            <div class='multiforminputs'>
+                <label for='searchTerm'>Search term: </label>
+                <input id='searchTerm' placeholder='(ID #, location, etc.)'>
+                <div class='errorDialog' id='searchTermWarning'></div>
+            </div>
+            <div>
+                <button type='button' class='formbutton' id='showallButton'>Show all</button>
+                OR
+                <button type='button' class='formbutton' id='searchButton'>Search</button>
+                <button type='button' class='formbutton' id='resetButton'>Reset</button>
+            </div>
+        </form>
+    </div>
+    <div class='catalog' id='invSearchResults'>
+
+    </div>
+    <script src='javascripts/viewInv.js'></script>
+<% include footer %>

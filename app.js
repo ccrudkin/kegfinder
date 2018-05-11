@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newInvRouter = require('./routes/newInvRouter');
 var newInvCreate = require('./routes/newInvCreateRouter');
+var viewInvRouter = require('./routes/viewInvRouter');
+var modInvRouter = require('./routes/modInvRouter');
 
 var app = express();
 
@@ -25,6 +27,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/newinventory', newInvRouter);
 app.use('/newinventory=create', newInvCreate);
+app.use('/viewInventory', viewInvRouter);
+app.use('/modInventory', modInvRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

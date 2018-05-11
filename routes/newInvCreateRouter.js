@@ -3,33 +3,6 @@ var router = express.Router();
 var sqlite = require('sqlite3');
 const db = new sqlite.Database('data.db');
 
-// initialize new table in database
-function newInv(user) {
-    db.run(`CREATE TABLE inventory${user} (id TEXT PRIMARY KEY, initialized NUMERIC, condition TEXT, 
-        type TEXT, batchid TEXT, style TEXT, fillnotes TEXT, location TEXT, movedate NUMERIC, 
-        othernotes TEXT)`, (err) => {
-            if (err) {
-                console.log('Error: ' + err);
-            } else {
-                console.log('New table successfully created.');
-            }
-    });
-}
-
-function addKegs(user, num, type) {
-    let initdate = new Date();
-    initdate = initdate.toISOString();
-    for (let i = 0; i < num; i++) {
-        db.run(`INSERT INTO inventory${user} (id, initialized, condition, type, location) 
-            VALUES ("${i}", "${initdate}", "initialized", "${type}", "brewery")`, (err) => {
-                if (err) {
-                    console.log(err);
-                }
-            });
-    }
-}
-
-
 // respond with confirmation
 router.get('/:user/:num/:type/:naming/:add', (req, res) => {
     let user = req.params.user;
