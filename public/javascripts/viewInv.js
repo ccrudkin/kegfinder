@@ -41,6 +41,7 @@ function printQuery() {
             });
             html.push('</tbody></table>');
             document.getElementById('invSearchResults').innerHTML = html.join('');
+            document.getElementById('searchTermWarning').innerHTML = '';
         }, error(jqXHR, status, errorThrown) {
             console.log(status + ' ' + errorThrown);
         }
@@ -83,6 +84,7 @@ function allCatalog() {
             });
             html.push('</tbody></table>');
             document.getElementById('invSearchResults').innerHTML = html.join('');
+            document.getElementById('searchTermWarning').innerHTML = '';
         }, error(jqXHR, status, errorThrown) {
             console.log(status + ' ' + errorThrown);
         }
@@ -91,9 +93,20 @@ function allCatalog() {
 
 function resetFields() {
     document.getElementById('viewInvForm').reset();
+    document.getElementById('searchTermWarning').innerHTML = '';
 }
 function resetCatalog() {
-    document.getElementById('invSearchResults').innerHTML = '';
+    document.getElementById('invSearchResults').innerHTML = '<table>' + 
+        '<thead>' +
+        '<tr><th>Keg ID</th>' +
+        '<th>Keg type</th>' +
+        '<th>Status</th>' +
+        '<th>Style</th>' +
+        '<th>Batch ID</th>' +
+        '<th>Location</th>' +
+        '</tr>' +
+        '</thead>' +
+        '</table>';
 }
 
 // TODO: display errors if fields left blank, etc.

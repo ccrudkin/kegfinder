@@ -4,8 +4,8 @@
 
 body {
   width: 1000px;
-  padding: 10px;
   font: 14px Roboto, sans-serif;
+  padding: 10px 0px;
   margin: auto;
 }
 
@@ -15,6 +15,8 @@ a {
 
 h1 {
   font-family: Roboto, sans-serif;
+  position: relative;
+  top: 35px;
 }
 
 h2 {
@@ -26,15 +28,20 @@ h2 {
   border: 2px solid #45b39d;
   border-radius: 3px;
   padding: 5px 10px;
+  position: relative;
+  top: 35px;
   margin-left: 0px;
 }
 
 .navbar {
   width: 1000px;
   height: 45px;
-  display: inline-block;
   background-color: #45b39d;
-  border-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
   margin: auto;
 }
 
@@ -66,6 +73,11 @@ h2 {
   margin: 5px 5px auto;
 }
 
+.content {
+  position: relative;
+  top: 35px;
+}
+
 #resetButton {
   color: #eb984e;
   background-color: #e5e8e8;
@@ -89,6 +101,8 @@ h2 {
   font-family: Roboto, sans-serif;
   color: #424949;
   padding: 10px;
+  position: relative;
+  top: 35px;
   margin: 10px auto;
 }
 
@@ -112,6 +126,12 @@ input:focus, select:focus, textarea:focus {
 .errorDialog {
   font-family: Roboto, sans-serif;
   color: #c0392b;
+}
+
+.catalog {
+  position: relative;
+  top: 50px;
+  padding-bottom: 30px;
 }
 
 .catalog table {
