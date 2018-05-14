@@ -10,6 +10,7 @@ var newInvRouter = require('./routes/newInvRouter');
 var newInvCreate = require('./routes/newInvCreateRouter');
 var viewInvRouter = require('./routes/viewInvRouter');
 var modInvRouter = require('./routes/modInvRouter');
+var responsive = require('./routes/responsiveRouter');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/newinventory', newInvRouter);
 app.use('/newinventory=create', newInvCreate);
 app.use('/viewInventory', viewInvRouter);
 app.use('/modInventory', modInvRouter);
+app.use('/responsive', responsive);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

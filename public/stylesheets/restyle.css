@@ -1,12 +1,17 @@
 * {
   box-sizing: border-box;
+  font-size: 20px;
 }
 
 body {
-  width: 1000px;
-  font: 14px Roboto, sans-serif;
+  width: 95%;
+  font: medium Roboto, sans-serif;
   padding: 10px 0px;
   margin: auto;
+}
+
+p {
+    margin-left: 10px;
 }
 
 a {
@@ -21,44 +26,74 @@ h1 {
 
 h2 {
   font-family: Roboto, sans-serif;
-  font-size: 20px;
-  width: 700px;
+  font-size: 300%;
+  width: 80%;
   color: #45b39d;
   background-color: #fff;
   border: 2px solid #45b39d;
-  border-radius: 3px;
+  border-radius: 8px;
   padding: 5px 10px;
-  position: relative;
-  top: 35px;
-  margin-left: 0px;
 }
 
 .navbar {
-  width: 1000px;
-  height: 45px;
+  display: none;
+  width: 95%;
   background-color: #45b39d;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  position: fixed;
-  top: 0px;
   z-index: 10;
-  margin: auto;
+  border-radius: 8px;
+  padding: 3px;
+  margin: 5px 0px 0px 0px;
+}
+
+.navbarContainer {
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
 }
 
 .navbar a {
   font-family: Roboto;
-  font-size: 18px;
+  width: 100%;
+  font-size: 300%;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
   color: #e5e8e8;
-  height: 45px;
   padding: 10px 20px;
+  margin: auto;
 }
+
+.navbarButton a {
+    font-family: Roboto;
+    width: 100%;
+    font-size: 300%;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    color: #45b39d;
+    background-color: #e5e8e8;
+    border: 3px solid #45b39d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: auto;
+  }
 
 .navbar a:hover {
   color: #45b39d;
   background-color: #fff;
+}
+
+.navbarButton a:active {
+    color: #e5e8e8;
+    background-color: #45b39d;
+    cursor: pointer;
+}
+
+.textBody {
+    width: 80%;
+    margin-left: 20px;
 }
 
 .formbutton {
@@ -71,11 +106,6 @@ h2 {
   padding: 5px 10px;
   border-radius: 3px;
   margin: 5px 5px auto;
-}
-
-.content {
-  position: relative;
-  top: 35px;
 }
 
 #resetButton {
@@ -101,8 +131,6 @@ h2 {
   font-family: Roboto, sans-serif;
   color: #424949;
   padding: 10px;
-  position: relative;
-  top: 35px;
   margin: 10px auto;
 }
 
@@ -130,8 +158,6 @@ input:focus, select:focus, textarea:focus {
 }
 
 .catalog {
-  position: relative;
-  top: 50px;
   padding-bottom: 30px;
 }
 
