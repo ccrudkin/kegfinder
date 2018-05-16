@@ -4,7 +4,7 @@ var sqlite = require('sqlite3');
 const db = new sqlite.Database('data.db');
 
 // respond with confirmation
-router.get('/:user/:num/:type/:naming/:add', (req, res) => {
+router.get('/:user/:num/:type/:naming/:add', ensureAuthenticated, (req, res) => {
     let user = req.params.user;
     let num = req.params.num;
     let type = req.params.type;
@@ -64,5 +64,13 @@ router.get('/:user/:num/:type/:naming/:add', (req, res) => {
         res.send('Add request received.');
     }
 });
+
+function ensureAuthenticated(req, res, next){
+	if(req.isAuthenticated()) {
+		return next();
+	} else {
+		res.redirect('/login/unauth');
+	}
+}
 
 module.exports = router;

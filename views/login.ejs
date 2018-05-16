@@ -1,10 +1,10 @@
 <% include header %>
     <h2>Login</h2>
     <% if (status != '') { %>
-        <%- "<p class='successDialog content'>" %><%= status %><%- "</p>" %>
+        <%- "<p class='loginSuccess content'>" %><%= status %><%- "</p>" %>
     <% } %>
     <% if (errors != '') { %>
-        <%- "<p class='errorDialog content'>" %><%= errors %><%- "</p>" %>
+        <%- "<p class='loginWarning content'>" %><%= errors %><%- "</p>" %>
     <% } %>
 
     <div class='multiform'>

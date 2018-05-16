@@ -9,7 +9,7 @@ router.get('/', ensureAuthenticated, function(req, res) {
 });
 
 // Return search results.
-router.get('/:user/:searchBy/:term', (req, res) => {
+router.get('/:user/:searchBy/:term', ensureAuthenticated, (req, res) => {
     const db = new sqlite.Database('data.db');
     let user = req.params.user;
     let searchBy = req.params.searchBy;

@@ -3,12 +3,12 @@ var router = express.Router();
 var sqlite = require('sqlite3');
 
 // GET viewInv page
-router.get('/', function(req, res) {
+router.get('/', ensureAuthenticated, function(req, res) {
     res.render('modInv', { pagetitle: 'kegfinder' });
   });
 
 // intake information to update inventory via get
-router.get('/:condition/:style/:batchid/:location/:othernotes/:user/:id', (req, res) => {
+router.get('/:condition/:style/:batchid/:location/:othernotes/:user/:id', ensureAuthenticated, (req, res) => {
     let kegIDs = req.params.id.split(',');
     let updates = Object.assign({}, req.params);
 
@@ -33,6 +33,14 @@ router.get('/:condition/:style/:batchid/:location/:othernotes/:user/:id', (req, 
     
 
     res.send('Received.');
-}) 
+});
+
+function ensureAuthenticated(req, res, next){
+	if(req.isAuthenticated()) {
+		return next();
+	} else {
+		res.redirect('/login/unauth');
+	}
+}
 
 module.exports = router;

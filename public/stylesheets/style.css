@@ -134,6 +134,11 @@ input:focus, select:focus, textarea:focus {
 }
 
 .errorDialog {
+  font-family: Roboto, sans-serif;
+  color: #c0392b;
+}
+
+.loginWarning {
   width: 60%;
   font-family: Roboto, sans-serif;
   color: #c0392b;
@@ -144,6 +149,11 @@ input:focus, select:focus, textarea:focus {
 }
 
 .successDialog {
+  font-family: Roboto, sans-serif;
+  color: #45b39d;
+}
+
+.loginSuccess {
   width: 60%;
   font-family: Roboto, sans-serif;
   color: #45b39d;
