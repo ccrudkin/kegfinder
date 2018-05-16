@@ -3,8 +3,9 @@ var router = express.Router();
 var sqlite = require('sqlite3');
 
 // GET viewInv page
-router.get('/', function(req, res) {
-  res.render('viewInv', { pagetitle: 'kegfinder' });
+router.get('/', ensureAuthenticated, function(req, res) {
+    console.log('User: ' + req.user); // now have access to signed-in user
+    res.render('viewInv', { pagetitle: 'kegfinder' });
 });
 
 // Return search results.
@@ -35,5 +36,13 @@ router.get('/:user/:searchBy/:term', (req, res) => {
     }
     db.close();
 });
+
+function ensureAuthenticated(req, res, next){
+	if(req.isAuthenticated()) {
+		return next();
+	} else {
+		res.redirect('/login/unauth');
+	}
+}
 
 module.exports = router;

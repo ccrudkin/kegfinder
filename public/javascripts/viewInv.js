@@ -1,10 +1,15 @@
+$(document).ready(() => { // ugly way to handle this -- find better solution
+    $('#searchTermWarning').hide();
+});
+
 function printQuery() {
     let user = document.getElementById('userID').value;
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = document.getElementById('searchTerm').value;
 
     if (searchTerm === '') {
-        document.getElementById('searchTermWarning').innerHTML = '&nbspEnter a valid search term or use "Show all".'
+        document.getElementById('searchTermWarning').innerHTML = '&nbspEnter a valid search term or use "Show all".';
+        $('#searchTermWarning').show();
     }
 
     $.ajax({
@@ -94,7 +99,9 @@ function allCatalog() {
 function resetFields() {
     document.getElementById('viewInvForm').reset();
     document.getElementById('searchTermWarning').innerHTML = '';
+    $('#searchTermWarning').hide();
 }
+
 function resetCatalog() {
     document.getElementById('invSearchResults').innerHTML = '<table>' + 
         '<thead>' +

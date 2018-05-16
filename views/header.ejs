@@ -11,4 +11,10 @@
         <a href='/viewInventory'>View inventory</a>
         <a href='/modInventory'>Update keg inventory</a>
         <a href='/newInventory'>New keg inventory</a>
+        <% if (!user) { %>
+          <%- "<a href='/login' class='logButton'>Login</a>" %>
+        <% } %>
+        <% if (user) { %>
+          <%- "<a href='/logout' class='logButton'>Logout</a>" %>
+        <% } %>
     </div>

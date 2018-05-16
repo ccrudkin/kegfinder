@@ -73,9 +73,14 @@ h2 {
   margin: 5px 5px auto;
 }
 
+.logButton {
+  float: right;
+}
+
 .content {
   position: relative;
   top: 35px;
+  margin-left: 10px;
 }
 
 #resetButton {
@@ -113,6 +118,10 @@ h2 {
   margin: auto;
 }
 
+.multiform input {
+  font-size: 16px;
+}
+
 input, select, textarea {
   border: solid 1px #707b7c;
   padding: 0px 0px 2px 2px;
@@ -125,8 +134,23 @@ input:focus, select:focus, textarea:focus {
 }
 
 .errorDialog {
+  width: 60%;
   font-family: Roboto, sans-serif;
   color: #c0392b;
+  background-color: #f2d7d5;
+  border-radius: 3px;
+  border: 1px solid #c0392b;
+  padding: 5px;
+}
+
+.successDialog {
+  width: 60%;
+  font-family: Roboto, sans-serif;
+  color: #45b39d;
+  background-color: #d0ece7;
+  border-radius: 3px;
+  border: 1px solid #45b39d;
+  padding: 5px;
 }
 
 .catalog {

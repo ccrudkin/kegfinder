@@ -1,17 +1,18 @@
 * {
   box-sizing: border-box;
   font-size: 20px;
+  -webkit-text-size-adjust: none;
 }
 
 body {
   width: 95%;
   font: medium Roboto, sans-serif;
-  padding: 10px 0px;
   margin: auto;
 }
 
 p {
     margin-left: 10px;
+    font-size: 200%;
 }
 
 a {
@@ -28,6 +29,8 @@ h2 {
   font-family: Roboto, sans-serif;
   font-size: 300%;
   width: 80%;
+  position: relative;
+  top: 75px;
   color: #45b39d;
   background-color: #fff;
   border: 2px solid #45b39d;
@@ -48,8 +51,11 @@ h2 {
 }
 
 .navbarContainer {
-    width: 100%;
+    width: 95%;
+    position: fixed;
+    top: 0px;
     background-color: #fff;
+    border-radius: 8px;
     z-index: 10;
 }
 
@@ -92,8 +98,15 @@ h2 {
 }
 
 .textBody {
-    width: 80%;
+    width: 90%;
+    position: relative;
+    top: 75px;
     margin-left: 20px;
+}
+
+.space {
+  position: relative;
+  top: 500px;
 }
 
 .formbutton {
