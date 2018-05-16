@@ -43,7 +43,7 @@ router.get('/:user/:num/:type/:naming/:add', ensureAuthenticated, (req, res) => 
             let lastID = 'snoot';
             db.get(`SELECT id, MAX(id) FROM inventory${user}`, (err, row) => {
                 if (!err) {
-                    console.log(row.id);
+                    console.log('Last/highest keg ID: ' + row.id);
                     lastID = parseInt(row.id);
                     db.serialize(() => {
                         for (let i = lastID + 1; i <= lastID + parseInt(num); i++) {
@@ -61,7 +61,7 @@ router.get('/:user/:num/:type/:naming/:add', ensureAuthenticated, (req, res) => 
                 }
             })
         });
-        res.send('Add request received.');
+        res.send('Success.');
     }
 });
 

@@ -2,7 +2,7 @@
 function getForm() {
     let kegIDs = document.getElementById('updateKegs').value;
     if (kegIDs === '') {
-        document.getElementById('message').innerHTML = 'Please enter at least one keg ID.';
+        document.getElementById('errormessage').innerHTML = 'Please enter at least one keg ID.';
         return
     } else {
         kegIDs = kegIDs.replace(/\s+/g, '');
@@ -14,7 +14,7 @@ function getForm() {
     let batchid = document.getElementById('batchid').value;
     let location = document.getElementById('location').value;
     let othernotes = document.getElementById('othernotes').value;
-    let user = document.getElementById('userID').value;
+    let user = document.getElementById('userid').innerHTML;
 
     // fix this heinous duplication later with refactored code
     if (condition === '') { 
@@ -41,6 +41,7 @@ function getForm() {
         type: 'GET',
         success(res) {
             console.log(res);
+            resetFields();
             document.getElementById('message').innerHTML = 'Inventory updated.' + 
                 "&nbsp&nbsp<a href='/viewInventory'>View inventory</a>";
         }, 
@@ -53,6 +54,7 @@ function getForm() {
 function resetFields() {
     document.getElementById('updateInvForm').reset();
     document.getElementById('message').innerHTML = '';
+    document.getElementById('errormessage').innerHTML = '';
 }
 
 document.getElementById('updateButton').addEventListener('click', getForm);

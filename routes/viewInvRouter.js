@@ -4,8 +4,7 @@ var sqlite = require('sqlite3');
 
 // GET viewInv page
 router.get('/', ensureAuthenticated, function(req, res) {
-    console.log('User: ' + req.user); // now have access to signed-in user
-    res.render('viewInv', { pagetitle: 'kegfinder' });
+    res.render('viewInv', { pagetitle: 'kegfinder', userid: req.user });
 });
 
 // Return search results.

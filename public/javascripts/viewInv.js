@@ -3,7 +3,7 @@ $(document).ready(() => { // ugly way to handle this -- find better solution
 });
 
 function printQuery() {
-    let user = document.getElementById('userID').value;
+    let user = document.getElementById('userid').innerHTML;
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = document.getElementById('searchTerm').value;
 
@@ -55,7 +55,7 @@ function printQuery() {
 
 // TODO: Limit to # results per page
 function allCatalog() {
-    let user = document.getElementById('userID').value;
+    let user = document.getElementById('userid').innerHTML;
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = 'getAll';
 

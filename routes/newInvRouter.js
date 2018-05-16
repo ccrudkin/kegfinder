@@ -3,7 +3,7 @@ var router = express.Router();
 
 // render New Inventory page
 router.get('/', ensureAuthenticated, function(req, res) {
-  res.render('newInv', { pagetitle: 'kegfinder', message: '' });
+  res.render('newInv', { pagetitle: 'kegfinder', message: '', userid: req.user });
 });
 
 function ensureAuthenticated(req, res, next){

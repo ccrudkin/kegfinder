@@ -4,7 +4,7 @@ var sqlite = require('sqlite3');
 
 // GET viewInv page
 router.get('/', ensureAuthenticated, function(req, res) {
-    res.render('modInv', { pagetitle: 'kegfinder' });
+    res.render('modInv', { pagetitle: 'kegfinder', userid: req.user });
   });
 
 // intake information to update inventory via get
