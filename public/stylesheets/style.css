@@ -203,8 +203,21 @@ input:focus, select:focus, textarea:focus {
   font-size: 14px;
 }
 
+.catalog th:hover {
+  cursor: pointer;
+}
+
 .catalog th, td {
-  padding: 5px 10px;
+  padding: 5px 15px;
+}
+
+
+#kegNotes {
+  width: 20%;
+}
+
+#kegStyle {
+  width: 15%;
 }
 
 .catalog tbody tr:nth-child(even) {
@@ -223,4 +236,8 @@ input:focus, select:focus, textarea:focus {
 
 #searchTermWarning {
   display: inline;
+}
+
+#sortBy {
+  font-size: 14px;
 }

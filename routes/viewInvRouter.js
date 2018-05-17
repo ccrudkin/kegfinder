@@ -8,15 +8,19 @@ router.get('/', ensureAuthenticated, function(req, res) {
 });
 
 // Return search results.
-router.get('/:user/:searchBy/:term', ensureAuthenticated, (req, res) => {
+router.get('/:user/:searchBy/:term/:sort', ensureAuthenticated, (req, res) => {
     const db = new sqlite.Database('data.db');
     let user = req.params.user;
     let searchBy = req.params.searchBy;
     let term = req.params.term;
+    let sort = req.params.sort;
+
+    console.log(sort);
     
     if (term === 'getAll') {
-        db.all(`SELECT * FROM inventory${user}`, (err, rows) => {
+        db.all(`SELECT * FROM inventory${user} ORDER BY "${sort}"`, (err, rows) => {
             if (!err) {
+                console.log(rows);
                 res.send(rows);
             } else {
                 console.log(err);
