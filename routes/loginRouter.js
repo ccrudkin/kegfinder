@@ -9,7 +9,7 @@ var bcrypt = require('bcryptjs');
 
 
 // login page
-router.get('/', function(req, res) {
+router.get('/', ensureNotAuthenticated, function(req, res) {
     res.render('login', { pagetitle: 'kegfinder', status: '', errors: '' });
 });
 
@@ -29,12 +29,12 @@ router.get('/retry', (req, res) => {
 });
 
 // logged out success
-router.get('/out', (req, res) => {
-    res.render('login', { pagetitle: 'kegfinder', status: 'You logged out successfully.', errors: '' });
+router.get('/out', ensureNotAuthenticated, (req, res) => {
+    res.render('login', { pagetitle: 'kegfinder', status: 'You are logged out.', errors: '' });
 });
 
 // register page
-router.get('/register', (req, res) => {
+router.get('/register', ensureNotAuthenticated, (req, res) => {
     res.render('register', { pagetitle: 'kegfinder', errors: '' });
 });
 
@@ -97,7 +97,6 @@ passport.use(new LocalStrategy(function(username, password, done) {
 // /*
     db.get(`SELECT username, password FROM users WHERE username = "${username}"`, (err, row) => {
         if (!row) return done(null, false, {});
-        console.log(row.username + ' ' + row.password);
         // hashed password loaded, now compare with input
         bcrypt.compare(password, row.password, function(err, res) {
             if (err) {
@@ -147,5 +146,13 @@ router.get('/', function(req, res) {
     req.logout();
 });
 */
+
+function ensureNotAuthenticated(req, res, next){
+    if(req.isAuthenticated()) {
+        res.redirect('/');
+    } else {
+        return next();
+    }
+}
 
 module.exports = router;

@@ -13,8 +13,10 @@ function getForm() {
     let contents = document.getElementById('contents').value;
     let batchid = document.getElementById('batchid').value;
     let location = document.getElementById('location').value;
-    let othernotes = document.getElementById('othernotes').value;
+    let othernotes = encodeURIComponent(document.getElementById('othernotes').value);
     let user = document.getElementById('userid').innerHTML;
+
+    console.log(othernotes);
 
     // fix this heinous duplication later with refactored code
     if (condition === '') { 
