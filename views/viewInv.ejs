@@ -21,8 +21,8 @@
                 <div class='errorDialog' id='searchTermWarning'></div>
             </div>
             <div>
-                <button type='button' class='formbutton' id='showallButton'>Show all</button>
-                OR
+                <!-- <button type='button' class='formbutton' id='showallButton'>Show all</button>
+                OR -->
                 <button type='button' class='formbutton' id='searchButton'>Search</button>
                 <button type='button' class='formbutton' id='resetButton'>Reset</button>
             </div>
@@ -30,16 +30,16 @@
     </div>
     <div class='catalog' id='invSearchResults'>
             <table>  
-                <thead> 
+                <thead id='tabHead'>
                     <tr>
                         <th id='sortBy'>Sort:</th>
-                        <th id='kegID'>Keg ID</th>
-                        <th id='kegType'>Type</th> 
-                        <th id='kegStatus'>Status</th> 
-                        <th id='kegStyle'>Style</th> 
-                        <th id='kegbatchID'>Batch</th> 
-                        <th id='kegLocation'>Location</th>
-                        <th id='kegLastChange'>Last change</th>
+                        <th id='kegID' class='hoverable'>Keg ID</th>
+                        <th id='kegType' class='hoverable'>Type</th> 
+                        <th id='kegStatus' class='hoverable'>Status</th> 
+                        <th id='kegStyle' class='hoverable'>Style</th> 
+                        <th id='kegbatchID' class='hoverable'>Batch</th> 
+                        <th id='kegLocation' class='hoverable'>Location</th>
+                        <th id='kegLastChange' class='hoverable'>Last change</th>
                         <th id='kegNotes'>Notes</th>
                     </tr>
                 </thead>

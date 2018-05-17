@@ -2,7 +2,17 @@ $(document).ready(() => { // ugly way to handle this -- find better solution
     $('#searchTermWarning').hide();
 });
 
-function printQuery() {
+function searchOrAll(sort) {
+    let searchTerm = document.getElementById('searchTerm').value;
+
+    if (searchTerm === '') {
+        allCatalog(sort);
+    } else {
+        printQuery(sort);
+    }
+}
+
+function printQuery(sort) {
     let user = document.getElementById('userid').innerHTML;
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = document.getElementById('searchTerm').value;
@@ -13,25 +23,10 @@ function printQuery() {
     }
 
     $.ajax({
-        url: `/viewInventory/${user}/${searchBy}/${searchTerm}/none`,
+        url: `/viewInventory/${user}/${searchBy}/${searchTerm}/${sort}`,
         type: 'GET',
         success(res) {
             let html = [];
-            /* html.push(
-                '<table>' + 
-                '<thead>' +
-                '<tr><th>Keg ID</th>' +
-                '<th>Keg type</th>' +
-                '<th>Status</th>' +
-                '<th>Style</th>' +
-                '<th>Batch ID</th>' +
-                '<th>Location</th>' +
-                '<th>Last change</th>' +
-                '<th>Notes</th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>'
-            ); */
             res.forEach((row) => {
                 html.push('<tr>');
                 html.push('<td></td>');
@@ -67,19 +62,6 @@ function allCatalog(sort) {
         type: 'GET',
         success(res) {
             let html = [];
-            /* html.push(
-                '<table>' + 
-                '<thead>' +
-                '<tr><th>Keg ID</th>' +
-                '<th>Keg type</th>' +
-                '<th>Status</th>' +
-                '<th>Style</th>' +
-                '<th>Batch ID</th>' +
-                '<th>Location</th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>'
-            ); */
             res.forEach((row) => {
                 html.push('<tr>');
                 html.push('<td></td>');
@@ -112,15 +94,22 @@ function resetCatalog() {
     allCatalog('id');
 }
 
+allCatalog('id');
+
 // TODO: display errors if fields left blank, etc.
-document.getElementById('searchButton').addEventListener('click', printQuery);
+document.getElementById('searchButton').addEventListener('click', function () { searchOrAll('id'); } );
 document.getElementById('resetButton').addEventListener('click', resetFields);
 document.getElementById('resetButton').addEventListener('click', resetCatalog);
-document.getElementById('showallButton').addEventListener('click', allCatalog('id'));
-document.getElementById('kegID').addEventListener('click', function () { allCatalog('id'); } );
-document.getElementById('kegType').addEventListener('click', function () { allCatalog('type'); } );
-document.getElementById('kegStatus').addEventListener('click', function () { allCatalog('condition'); } );
-document.getElementById('kegStyle').addEventListener('click', function () { allCatalog('style'); } );
-document.getElementById('kegbatchID').addEventListener('click', function () { allCatalog('batchid'); } );
-document.getElementById('kegLocation').addEventListener('click', function () { allCatalog('location'); } );
-document.getElementById('kegLastChange').addEventListener('click', function () { allCatalog('movedate'); } );
+// setup below for doing sorting later on. But how to sort queries vs. whole catalog?
+
+document.getElementById('kegID').addEventListener('click', function () { searchOrAll('id'); } );
+document.getElementById('kegType').addEventListener('click', function () { searchOrAll('type'); } );
+document.getElementById('kegStatus').addEventListener('click', function () { searchOrAll('condition'); } );
+document.getElementById('kegStyle').addEventListener('click', function () { searchOrAll('style'); } );
+document.getElementById('kegbatchID').addEventListener('click', function () { searchOrAll('batchid'); } );
+document.getElementById('kegLocation').addEventListener('click', function () { searchOrAll('location'); } );
+document.getElementById('kegLastChange').addEventListener('click', function () { searchOrAll('movedate'); } );
+
+
+
+

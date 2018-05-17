@@ -18,7 +18,7 @@ router.get('/:user/:searchBy/:term/:sort', ensureAuthenticated, (req, res) => {
     console.log(sort);
     
     if (term === 'getAll') {
-        db.all(`SELECT * FROM inventory${user} ORDER BY "${sort}"`, (err, rows) => {
+        db.all(`SELECT * FROM inventory${user} ORDER BY "${sort}" COLLATE nocase`, (err, rows) => {
             if (!err) {
                 console.log(rows);
                 res.send(rows);
@@ -28,7 +28,7 @@ router.get('/:user/:searchBy/:term/:sort', ensureAuthenticated, (req, res) => {
             }
         });
     } else {
-        db.all(`SELECT * FROM inventory${user} WHERE ${searchBy} COLLATE nocase = "${term}"`, (err, rows) => {
+        db.all(`SELECT * FROM inventory${user} WHERE ${searchBy} COLLATE nocase = "${term}" ORDER BY "${sort}"`, (err, rows) => {
             if (!err) {
                 res.send(rows);
             } else {

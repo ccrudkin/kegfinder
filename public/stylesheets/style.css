@@ -4,6 +4,7 @@
 
 body {
   width: 1000px;
+  min-height: 100%;
   font: 14px Roboto, sans-serif;
   padding: 10px 0px;
   margin: auto;
@@ -30,7 +31,8 @@ h2 {
   padding: 5px 10px;
   position: relative;
   top: 35px;
-  margin-left: 0px;
+  margin: 15px auto;
+
 }
 
 .navbar {
@@ -63,7 +65,7 @@ h2 {
   float: right;
   height: 45px;
   color: #45b39d;
-  border: 3px solid #eb984e;
+  border: 2px solid #eb984e;
   padding: 8px 20px;
 }
 
@@ -96,11 +98,24 @@ h2 {
   border: 1px solid #45b39d;
   border-radius: 3px;
   padding: 15px;
+  margin: auto;
+}
+
+.footer {
+  color: #424949;
+  font-size: 14px;
+  position: relative;
+  width: 700px;
+  bottom: -60px;
+  border: 1px solid #45b39d;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px auto;
 }
 
 #resetButton {
   color: #eb984e;
-  background-color: #e5e8e8;
+  background-color: #fff;
   border: 2px solid #eb984e;
 }
 
@@ -112,7 +127,7 @@ h2 {
 
 .formbutton:hover {
   color: #45b39d;
-  background-color: #e5e8e8;
+  background-color: #fff;
   border: 2px solid #45b39d;
   padding: 5px 10px;
 }
@@ -123,7 +138,10 @@ h2 {
   padding: 10px;
   position: relative;
   top: 35px;
-  margin: 10px auto;
+  width: 700px;
+  border: 1px solid #45b39d;
+  border-radius: 3px;
+  margin: auto;
 }
 
 .multiform .multiforminputs {
@@ -161,6 +179,7 @@ input:focus, select:focus, textarea:focus {
   border-radius: 3px;
   border: 1px solid #c0392b;
   padding: 5px;
+  margin: 15px auto;
 }
 
 .successDialog {
@@ -176,6 +195,7 @@ input:focus, select:focus, textarea:focus {
   border-radius: 3px;
   border: 1px solid #45b39d;
   padding: 5px;
+  margin: 15px auto;
 }
 
 .catalog {
@@ -185,6 +205,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .catalog table {
+  width: 100%;
   border-collapse: collapse;
   border-left: 3px solid #45b39d;
   border-radius: 3px;
@@ -203,8 +224,9 @@ input:focus, select:focus, textarea:focus {
   font-size: 14px;
 }
 
-.catalog th:hover {
+.hoverable:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .catalog th, td {
@@ -214,6 +236,8 @@ input:focus, select:focus, textarea:focus {
 
 #kegNotes {
   width: 20%;
+  text-decoration: none;
+  cursor: default;
 }
 
 #kegStyle {
@@ -240,4 +264,6 @@ input:focus, select:focus, textarea:focus {
 
 #sortBy {
   font-size: 14px;
+  text-decoration: none;
+  cursor: default;
 }
